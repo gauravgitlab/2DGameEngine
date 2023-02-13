@@ -4,6 +4,7 @@
 #include "Warrior.h"
 #include "Input.h"
 #include "SDL.h"
+#include "Timer.h"
 
 Engine* Engine::s_Instance = nullptr;
 Warrior* player = nullptr;
@@ -29,6 +30,8 @@ bool Engine::Init()
 	}
 
 	TextureManager::GetInstance()->Load("player", "Assets/Idle.png");
+	TextureManager::GetInstance()->Load("player_run", "Assets/Run.png");
+
 	player = new Warrior(new Properties("player", 100, 200, 128, 128));
 
 
@@ -37,12 +40,8 @@ bool Engine::Init()
 
 void Engine::Update()
 {
-	if(Input::GetInstance()->GetKeyDown(SDL_SCANCODE_A))
-	{
-		SDL_Log("A is pressed !");
-	}
-
-	player->Update(0);
+	float deltaTime = Timer::GetInstance()->GetDeltaTime();
+	player->Update(deltaTime);
 }
 
 void Engine::Render()
