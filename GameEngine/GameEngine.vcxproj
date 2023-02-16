@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Dev\SDL2-2.26.2\include;C:\Dev\SDL2_image-2.6.2\include;D:\2DGameEngine\GameEngine\Header Files\Character;D:\2DGameEngine\GameEngine\Header Files\Engine;D:\2DGameEngine\GameEngine\Header Files\Math;D:\2DGameEngine\GameEngine\Header Files\Map;D:\2DGameEngine\GameEngine\Vendor\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Dev\SDL2-2.26.2\include;C:\Dev\SDL2_image-2.6.2\include;D:\2DGameEngine\GameEngine\Header Files\Character;D:\2DGameEngine\GameEngine\Header Files\Engine;D:\2DGameEngine\GameEngine\Header Files\Math;D:\2DGameEngine\GameEngine\Header Files\Map;D:\2DGameEngine\GameEngine\Vendor\tinyxml;D:\2DGameEngine\GameEngine\Vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -123,7 +123,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Dev\SDL2-2.26.2\include;C:\Dev\SDL2_image-2.6.2\include;D:\2DGameEngine\GameEngine\Header Files\Character;D:\2DGameEngine\GameEngine\Header Files\Engine;D:\2DGameEngine\GameEngine\Header Files\Math;D:\2DGameEngine\GameEngine\Header Files\Map;D:\2DGameEngine\GameEngine\Vendor\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Dev\SDL2-2.26.2\include;C:\Dev\SDL2_image-2.6.2\include;D:\2DGameEngine\GameEngine\Header Files\Character;D:\2DGameEngine\GameEngine\Header Files\Engine;D:\2DGameEngine\GameEngine\Header Files\Math;D:\2DGameEngine\GameEngine\Header Files\Map;D:\2DGameEngine\GameEngine\Vendor\tinyxml;D:\2DGameEngine\GameEngine\Vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,6 +147,10 @@
     <ClCompile Include="Source Files\Map\TileLayer.cpp" />
     <ClCompile Include="Source Files\Math\Timer.cpp" />
     <ClCompile Include="Source Files\Character\Warrior.cpp" />
+    <ClCompile Include="Vendor\tinyxml\tinystr.cpp" />
+    <ClCompile Include="Vendor\tinyxml\tinyxml.cpp" />
+    <ClCompile Include="Vendor\tinyxml\tinyxmlerror.cpp" />
+    <ClCompile Include="Vendor\tinyxml\tinyxmlparser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header Files\Character\Animation.h" />
@@ -165,6 +169,8 @@
     <ClInclude Include="Header Files\Engine\Transform.h" />
     <ClInclude Include="Header Files\Math\Vector2D.h" />
     <ClInclude Include="Header Files\Character\Warrior.h" />
+    <ClInclude Include="Vendor\tinyxml\tinystr.h" />
+    <ClInclude Include="Vendor\tinyxml\tinyxml.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
