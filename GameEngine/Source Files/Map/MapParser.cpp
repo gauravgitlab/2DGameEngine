@@ -12,7 +12,11 @@ bool MapParser::Load()
 
 void MapParser::Clean() 
 {
+	std::map<std::string, GameMap*>::iterator it;
+	for (it = m_MapDict.begin(); it != m_MapDict.end(); it++)
+		it->second = nullptr;
 
+	m_MapDict.clear();
 }
 
 bool MapParser::Parse(std::string id, std::string source)
@@ -61,7 +65,7 @@ TileSet MapParser::ParseTileset(TiXmlElement* xmlTileset)
 	tileset.Name = xmlTileset->Attribute("name");
 	
 	xmlTileset->Attribute("firstgid", &tileset.FirstID);
-	xmlTileset->Attribute("tileCount", &tileset.TileCount);
+	xmlTileset->Attribute("tilecount", &tileset.TileCount);
 	tileset.LastID = (tileset.FirstID + tileset.TileCount) - 1;
 
 	xmlTileset->Attribute("columns", &tileset.ColumnsCount);
@@ -94,9 +98,9 @@ TileLayer* MapParser::ParseTileLayer(TiXmlElement* xmlLayer, TilesetList tileset
 
 	TileMap tilemap(rowCount, std::vector<int>(columnCount, 0));
 
-	for (int row = 0; row = rowCount; row++) 
+	for (int row = 0; row < rowCount; row++) 
 	{
-		for (int col = 0; col = columnCount; col++) 
+		for (int col = 0; col < columnCount; col++) 
 		{
 			getline(iss, id, ',');
 			std::stringstream convertor(id);

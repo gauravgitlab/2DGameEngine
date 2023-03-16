@@ -1,8 +1,8 @@
 #pragma once
 #include "SDL.h"
 #include "SDL_image.h"
+#include "GameMap.h"
  
-
 #define SCREEN_WIDTH 960
 #define SCREEN_HEIGHT 640
 
@@ -15,6 +15,8 @@ private:
 
 	SDL_Window* m_Window;
 	SDL_Renderer* m_Renderer;
+
+	GameMap* m_LevelMap;
 
 public :
 	static Engine* GetInstance() {

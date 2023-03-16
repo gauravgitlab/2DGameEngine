@@ -9,7 +9,7 @@
 class MapParser
 {
 private:
-	MapParser();
+	MapParser() { }
 	static MapParser* s_Instance;
 	std::map<std::string, GameMap*> m_MapDict;
 
@@ -22,6 +22,6 @@ public:
 	bool Load();
 	void Clean();
 
-	inline GameMap* GetMaps(std::string id) { return m_MapDict[id]; }
+	inline GameMap* GetMap(std::string id) { return m_MapDict[id]; }
 };
 
